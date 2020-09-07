@@ -3,14 +3,11 @@
     <div class="header">
      <img src="../assets/computer-767781_1280.jpg" alt="#" class="image">
      <div class="header-list">
-       <a class="logo" href="" v-scroll-to="''">TOP</a>
-       <nuxt-link
-       v-scroll-to="'#profile'"
-       to
-        class="logo" href="">PROFILE</nuxt-link>
-       <a class="logo" href="">SKILLS</a>
-       <a class="logo" href="">WORKS</a>
-       <a class="logo" href="">CONTACT</a>
+       <a class="logo" href="">TOP</a>
+       <a class="logo" href="#profile" v-smooth scroll>PROFILE</a>
+       <a class="logo" href="#skills" v-smooth-scroll>SKILLS</a>
+       <a class="logo" href="#works" v-smooth-scroll>WORKS</a>
+       <a class="logo" href="#contact" v-smooth-scroll>CONTACT</a>
      </div>
      <div class="top logo">
       <h1>Masaki<br>Tanada's<br>Portfolio</h1>
@@ -30,7 +27,7 @@
       </div>
      </div>
     </div>
-    <div class="skill">
+    <div class="skill" id="skills">
       <h2 class="title">SKILLS</h2>
      <div class="box">
       <div class="card">
@@ -58,10 +55,10 @@
       </div>
      </div>
     </div>
-    <div class="works">
+    <div class="works" id="works">
 
     </div>
-    <div class="contact">
+    <div class="contact" id="contact">
      <h2 class="title">CONTACT</h2>
      <p>最後までご覧いただきありがとうございました。<br>制作の依頼・ご相談などお気軽にメールまたはツイッターDMよりお問い合わせください。</p>
      <form name="contact" method="POST" data-netlify="true" action="/thankyou">
@@ -94,39 +91,17 @@
 </template>
 
 <script>
-
+import vueSmoothScroll from 'vue-smooth-scroll'
 
 export default {
-  data(){
-    return{
-      name:'',
-      email:'',
-      content:'',
-      isSubmit:false
-    }
-  },
   methods: {
-    encode (data) {
-      return Object.keys(data)
-        .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join('&')
-    },
-    handleSubmit () {
-      const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      }
-      this.axios
-        .post(
-          '/',
-          this.encode({
-            'form-name': 'contact',
-            ...this.form
-          }),
-          axiosConfig
-        )
-    }
+    Vue,use(vueSmoothScroll);
+    new Vue({
+      el:'#profile',
+      el:'#skills',
+      el:'#works',
+      el:'#contact',
+    }),
   }
 }
 </script>
