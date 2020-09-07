@@ -65,6 +65,7 @@
      <h2 class="title">CONTACT</h2>
      <p>最後までご覧いただきありがとうございました。<br>制作の依頼・ご相談などお気軽にメールまたはツイッターDMよりお問い合わせください。</p>
      <form name="contact" method="POST" data-netlify="true" action="../views/thankyou.vue">
+     <input type="hidden" name="form-name" value="contact" />
   <p>
     <label>Your Name: <input type="text" name="name" /></label>   
   </p>
