@@ -64,14 +64,26 @@
     <div class="contact">
      <h2 class="title">CONTACT</h2>
      <p>最後までご覧いただきありがとうございました。<br>制作の依頼・ご相談などお気軽にメールまたはツイッターDMよりお問い合わせください。</p>
-     <form class="contact-list" name="contact" netlify netlify-honeypot="bot-field" >
-       <input type="text" placeholder="お名前" name="name">
-       <input type="email" placeholder="メールアドレス" name="email">
-       <textarea name="message"  cols="40" rows="10" placeholder="お問い合わせ内容"></textarea>
-     </form>
-     <div class="button">
-      <a>送信</a>
-     </div>
+     <form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>   
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
     </div>
    </div>
    <div class="footer">
@@ -81,7 +93,17 @@
 </template>
 
 <script>
+
+
 export default {
+  data(){
+    return{
+      name:'',
+      email:'',
+      content:'',
+      isSubmit:false
+    }
+  },
   methods: {
     encode (data) {
       return Object.keys(data)
