@@ -4,9 +4,9 @@
      <img src="../assets/computer-767781_1280.jpg" alt="#" class="image">
      <div class="header-list">
        <a class="logo" href="">TOP</a>
-       <a class="logo" href="#profile" v-smooth scroll>PROFILE</a>
-       <a class="logo" href="#skills" v-smooth-scroll>SKILLS</a>
-       <a class="logo" href="#works" v-smooth-scroll>WORKS</a>
+       <a class="logo" href="#">PROFILE</a>
+       <a class="logo" href="#" >SKILLS</a>
+       <a class="logo" href="#" >WORKS</a>
        <a class="logo" href="#" @click="clickSmoothScroll()">CONTACT</a>
      </div>
      <div class="top logo">
@@ -274,16 +274,6 @@ nuxt-link{
   line-height: 35px;
 }
 
-form{
-  width: 50%;
-  margin: 0 auto;
-}
-
-input,
-select,
-textarea{
-  width: 300px;
-}
 
 
 .footer{
