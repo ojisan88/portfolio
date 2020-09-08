@@ -7,7 +7,7 @@
        <a class="logo" href="#profile" v-smooth scroll>PROFILE</a>
        <a class="logo" href="#skills" v-smooth-scroll>SKILLS</a>
        <a class="logo" href="#works" v-smooth-scroll>WORKS</a>
-       <a class="logo" href="#contact" v-smooth-scroll>CONTACT</a>
+       <a class="logo" href="#" @click="clickSmoothScroll()">CONTACT</a>
      </div>
      <div class="top logo">
       <h1>Masaki<br>Tanada's<br>Portfolio</h1>
@@ -95,14 +95,16 @@ import vueSmoothScroll from 'vue-smooth-scroll'
 
 export default {
   methods: {
-    Vue,use(vueSmoothScroll){
-    new Vue({
-      el:'#profile',
-      el:'#skills',
-      el:'#works',
-      el:'#contact',
-    });
-  }
+   clickSmoothScroll(){
+     event.preventDefault()
+     this.$SmoothScroll(
+       document.querySelector('#contact'),
+       400,
+       null,
+       null,
+       'y'
+     )
+   }
  }
 }
 </script>
