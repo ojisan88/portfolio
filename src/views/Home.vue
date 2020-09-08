@@ -64,10 +64,10 @@
      <form name="contact" method="POST" data-netlify="true" action="/thankyou">
      <input type="hidden" name="form-name" value="contact" />
   <p class="name">
-    <label>Your Name: <input type="text" name="name"/></label>   
+    <label>お名前: <input type="text" name="name"/></label>   
   </p>
   <p class="email">
-    <label>Your Email: <input type="email" name="email" /></label>
+    <label>メールアドレス: <input type="email" name="email" /></label>
   </p>
   <p>
     <label>Your Role: <select name="role[]" multiple>
@@ -91,8 +91,6 @@
 </template>
 
 <script>
-import vueSmoothScroll from 'vue-smooth-scroll'
-
 export default {
   methods: {
    clickSmoothScroll(){
@@ -274,8 +272,19 @@ nuxt-link{
   line-height: 35px;
 }
 
+form{
+  text-align: center;
+}
 
+input,
+select,
+textarea{
+  width: 300px;
+}
 
+form p{
+  margin: 20px 0 20px 0;
+}
 .footer{
   background-color: black;
   color: #ffffff;
