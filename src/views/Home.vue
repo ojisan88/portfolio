@@ -63,10 +63,10 @@
      <p>最後までご覧いただきありがとうございました。<br>制作の依頼・ご相談などお気軽にメールまたはツイッターDMよりお問い合わせください。</p>
      <form name="contact" method="POST" data-netlify="true" action="/thankyou">
      <input type="hidden" name="form-name" value="contact" />
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
+  <p class="name">
+    <label>Your Name: <input type="text" name="name"/></label>   
   </p>
-  <p>
+  <p class="email">
     <label>Your Email: <input type="email" name="email" /></label>
   </p>
   <p>
@@ -95,14 +95,15 @@ import vueSmoothScroll from 'vue-smooth-scroll'
 
 export default {
   methods: {
-    Vue,use(vueSmoothScroll);
+    Vue,use(vueSmoothScroll){
     new Vue({
       el:'#profile',
       el:'#skills',
       el:'#works',
       el:'#contact',
-    }),
+    });
   }
+ }
 }
 </script>
 
@@ -271,49 +272,17 @@ nuxt-link{
   line-height: 35px;
 }
 
-.contact-list{
+form{
   width: 50%;
   margin: 0 auto;
 }
 
-.contact-list input{
-  width: 600px;
-  display: block;
-  height: 30px;
-  margin: 30px auto;
-  border:1px solid black;
+input,
+select,
+textarea{
+  width: 300px;
 }
 
-.contact-list textarea{
-  border:1px solid black;
-  display: block;
-  margin: 30px auto;
-  width: 600px;
-}
-
-.button{
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.button a {
-  display       : inline-block;
-  border-radius : 7%;          /* 角丸       */
-  font-size     : 12pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 15px 14px;   /* 余白       */
-  background    : rgba(102, 102, 255, 0.95);     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 2px 2px 3px #666666;  /* 影の設定 */
-  margin: 30px auto;
-}
-
-.button:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-}
 
 .footer{
   background-color: black;
