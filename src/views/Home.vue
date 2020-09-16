@@ -192,13 +192,13 @@ export default {
   justify-content: center;
   position: absolute;
   top: 0px;
-  width: 100%;
+  width: 100vw;
   padding: 20px 0 20px 0;
 }
 
 .header-list a{
-  margin:0 40px 0 40px;
-  font-size: 25px;
+  margin:0 3vw;
+  font-size: 3vw;
   color:black;
   font-weight: bold;
   border: none;
@@ -232,14 +232,14 @@ export default {
 }
 
 .profile-right{
-  position: relative;
-  left: 40%;
-  top: 50px;
-  width: 60vw;
+  margin-left: 50%;
+  margin-top: 3%;
+  width: 300px;
 }
 
 .container{
   letter-spacing: 2px;
+  width: 100%;
 }
 
 .container p{
@@ -266,7 +266,6 @@ export default {
 .text{
   padding-left: 24px;
   line-height: 25px;
-  width: 50vw;
 }
 
 .skill{
@@ -470,7 +469,6 @@ button{
   display: block;
 }
 
-
 /*チェックがついたら表示させる*/
 #nav-input:checked ~ #nav-close {
   display: block;
@@ -502,6 +500,10 @@ button{
 .header-list a{
   margin-top: 20px;
 }
+
+.profile-right{
+  width: 50%;
+}
 .contact{
   height: 800px;
 }
@@ -519,7 +521,6 @@ textarea{
 }
 
 @media screen and (max-width: 480px) {
-
   .header{
     position: relative;
   }
@@ -557,7 +558,6 @@ textarea{
     width: 90%;
     font-size: 18px;
   }
-  
 
   input,
   textarea{
@@ -587,9 +587,6 @@ textarea{
     margin-left: 10px;
   }
 
-  .name{
-  }
-
   .name label,
   .email label,
   .company label,
@@ -599,12 +596,6 @@ textarea{
 
   .email{
     justify-content: right;
-  }
-
-  .company{
-  }
-
-  .about{
   }
 
   .contact{
