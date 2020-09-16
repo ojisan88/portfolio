@@ -1,29 +1,33 @@
 <template>
   <div class="home">
     <div class="header">
-     <img src="../assets/computer-767781_1280.jpg" alt="#" class="image">
-     <div class="header-list">
-       <a class="logo" href="">TOP</a>
-       <a class="logo" href="#">PROFILE</a>
-       <a class="logo" href="#" >SKILLS</a>
-       <a class="logo" href="#" >WORKS</a>
-       <a class="logo" href="#" @click="clickSmoothScroll()">CONTACT</a>
+      <div class="header-logo-menu">
+        <div id="nav-drawer">
+          <input type="checkbox" id="nav-input" class="nav-unshown">
+          <label for="nav-input" id="nav-open"><span></span></label>
+          <label for="nav-input" id="nav-close" class="nav-unshown"></label>
+          <div class="header-list">
+           <a class="logo" href="">TOP</a>
+           <a class="logo" href="#" @click="clickSmoothScrollprofile()">PROFILE</a>
+           <a class="logo" href="#" @click="clickSmoothScrollskills()">SKILLS</a>
+           <a class="logo" href="#" @click="clickSmoothScrollworks()">WORKS</a>
+           <a class="logo" href="#" @click="clickSmoothScrollcontact()">CONTACT</a>
+         </div>
+        </div>
      </div>
      <div class="top logo">
-      <h1>Masaki<br>Tanada's<br>Portfolio</h1>
+      <h1>Masaki<br />Tanada's<br />Portfolio</h1>
      </div>
     </div>
     <div class="main">
      <div class="profile" id="profile">
       <h2 class="title">PROFILE</h2>
-     <div class="profile-left">
-
-     </div>
+     <div class="profile-left"> </div>
      <div class="profile-right">
       <div class="container">
-        <p><span>名前:</span>棚田真起（たなだまさき）</p>
-        <p><span>出身:</span>東京都</p>
-        <p class="active-title">活動:</p><div class="text">現在大学1年。在学中。<br>2020年6月よりプログラミングの学習を始めた。<br>趣味はサッカー、体を動かすこと。</div>
+        <p class="name-en">Tanada Masaki</p>
+        <p class="name-ja">棚田真起</p>
+        <div class="text">東京都在住。現在大学1年。在学中。<br />2020年6月よりプログラミングの学習を始めました。<br />趣味はサッカー、体を動かすこと。</div>
       </div>
      </div>
     </div>
@@ -32,108 +36,133 @@
      <div class="box">
       <div class="card">
        <p>HTML</p>
-       <img src="../assets/HTML5_Badge.svg" alt="#">
+       <img src="../assets/HTML5_Badge.svg" alt="#" />
       </div>
       <div class="card">
-       <img src="../assets/css-3.svg" alt="#">
+       <img src="../assets/css-3.svg" alt="#" />
       </div>
       <div class="card">
        <p>javascript</p>
-       <img src="../assets/javascript.svg" alt="#">
+       <img src="../assets/javascript.svg" alt="#" />
       </div>
       <div class="card">
        <p>Vue.js</p>
-       <img src="../assets/vue.svg" alt="#">
+       <img src="../assets/vue.svg" alt="#" />
       </div>
       <div class="card">
        <p>PHP</p>
-       <img src="../assets/php.svg" alt="#">
+       <img src="../assets/php.svg" alt="#" />
       </div>
       <div class="card">
        <p>laravel</p>
-       <img src="../assets/laravel.svg" alt="#">
+       <img src="../assets/laravel.svg" alt="#" />
       </div>
      </div>
     </div>
-    <div class="works" id="works">
-
-    </div>
+    <div class="works" id="works"></div>
     <div class="contact" id="contact">
      <h2 class="title">CONTACT</h2>
-     <p>最後までご覧いただきありがとうございました。<br>制作の依頼・ご相談などお気軽にメールまたはツイッターDMよりお問い合わせください。</p>
-     <form name="contact" method="POST" data-netlify="true" action="/thankyou">
-     <input type="hidden" name="form-name" value="contact" />
-  <p class="name">
+     <p>最後までご覧いただきありがとうございました。<br />制作の依頼・ご相談などお気軽にメールまたはツイッターDMよりお問い合わせください。</p>
+     <form 
+      name="contact" 
+      method="POST" 
+      data-netlify="true" 
+      action="/thankyou"
+      >
+     <input 
+      type="hidden" 
+      name="form-name" 
+      value="contact"  />
+     <div class="name">
     <label>お名前: <input type="text" name="name"/></label>   
-  </p>
-  <p class="email">
+  </div>
+  <div class="email">
     <label>メールアドレス: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
+  </div>
+  <div class="company">
+    <label>会社名: <input name="company" type="text">
+    </label>
+  </div>
+  <div class="about">
+    <label>お問い合わせ内容: <textarea name="message"></textarea></label>
+  </div>
   <p>
     <button type="submit">Send</button>
   </p>
 </form>
     </div>
    </div>
-   <div class="footer">
-      <p>©Masaki Tanada, All Rights Reserved.</p>
-   </div>
+    <p class="footer">©Masaki Tanada, All Rights Reserved.</p>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-   clickSmoothScroll(){
-     event.preventDefault()
+   clickSmoothScrollprofile() {
+     event.preventDefault();
      this.$SmoothScroll(
-       document.querySelector('#contact'),
+       document.querySelector("#profile"),
        400,
        null,
        null,
-       'y'
-     )
-   }
- }
-}
+       "y"
+     );
+   },
+   clickSmoothScrollskills() {
+     event.preventDefault();
+     this.$SmoothScroll(
+       document.querySelector("#skills"),
+       400,
+       null,
+       null,
+       "y"
+     );
+   },
+   clickSmoothScrollworks() {
+     event.preventDefault();
+     this.$SmoothScroll(
+       document.querySelector("#works"),
+       400,
+       null,
+       null,
+       "y"
+     );
+   },
+   clickSmoothScrollcontact() {
+     event.preventDefault();
+     this.$SmoothScroll(
+       document.querySelector("#contact"),
+       400,
+       null,
+       null,
+       "y"
+     );
+   },
+ },
+};
 </script>
 
 <style scoped>
-
+.nav-unshown{
+  display: none;
+}
 
 .logo{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-nuxt-link{
-  cursor: pointer;
-}
-
-.header-list a {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-}
 .header-list a::after {
   position: absolute;
   bottom: 2px;
   left: 0;
-  content: '';
+  content: "";
   width: 100%;
   height: 2px;
   background: #333;
   opacity: 0;
   visibility: hidden;
-  transition: .3s;
+  transition: 0.3s;
 }
 .header-list a:hover::after {
   bottom: -4px;
@@ -149,10 +178,13 @@ nuxt-link{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.image{
-  width: 100%;
-  height: auto;
+
+.header{
+  background-image: url("../assets/computer-767781_1280.jpg");
+  background-size: cover;
+  height:850px;
 }
+
 
 .header-list{
   background-color: rgba(255, 255, 255, 0.3);
@@ -172,6 +204,9 @@ nuxt-link{
   border: none;
   cursor: pointer;
   padding: 10px 0 10px 0;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .top{
@@ -198,9 +233,9 @@ nuxt-link{
 
 .profile-right{
   position: relative;
-  left: 50%;
-  top: 100px;
-  width: 50%;
+  left: 40%;
+  top: 50px;
+  width: 60vw;
 }
 
 .container{
@@ -208,7 +243,20 @@ nuxt-link{
 }
 
 .container p{
-  margin: 30px 0 30px 0;
+  margin: 0px 0 30px 0;
+}
+
+.name-en{
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 5px;
+  padding-left: 20px;
+}
+
+.name-ja{
+  font-size: 24px;
+  font-weight: 550;
+  padding-left: 24px;
 }
 
 .container span{
@@ -216,17 +264,15 @@ nuxt-link{
 }
 
 .text{
-  position: relative;
-  left: 75px;
-  top: -45px;
+  padding-left: 24px;
   line-height: 25px;
-  width: 60%;
+  width: 50vw;
 }
 
 .skill{
   background-color: olive;
   position: relative;
-  top: -2px;
+  top: -3px;
   width: 100%;
   padding-bottom: 20px;
 }
@@ -261,7 +307,8 @@ nuxt-link{
 }
 
 .contact{
-  height: 600px;
+  height: 700px;
+  text-align: center;
 }
 
 .contact>p{
@@ -273,29 +320,302 @@ nuxt-link{
 }
 
 form{
-  text-align: center;
+  justify-content:center;
+  align-items: center;
+  margin: 0px 25vw;
 }
+
 
 input,
-select,
 textarea{
-  width: 300px;
-}
-
-form p{
-  margin: 20px 0 20px 0;
-}
-.footer{
-  background-color: black;
-  color: #ffffff;
+  width: 60%;
+  background-color: #E8E8EA;
   height: 50px;
-  margin-top: 30px;
-  width: 100%;
+  border: none;
+  margin-left: 20px;
 }
 
-.footer p{
+label{
+  font-size: 13px;
+}
+
+.name,
+.email,
+.company,
+.about{
+  text-align: right;
+  margin: 40px 0;
+  padding-right: 5vw;
+}
+
+button{
+ width: 50vw;
+ height: 50px;
+ font-size :20px;
+ background-color: black;
+ color: white;
+ cursor: pointer;
+ margin: 30px 0 30px 0;
+ text-align: center;
+}
+
+
+.footer{
   text-align: center;
   line-height: 50px;
   font-size: 12px;
+  width: 100%;
+  background-color:black;
+  color:white;
+}
+
+@media screen and (max-width: 768px) {
+  .header{
+    background-size: cover;
+    height: 500px;
+  }
+
+  .top{
+    position: absolute;
+    bottom: 20vw;
+    right: 30px;
+    line-height: 5px;
+  }
+
+  .top h1{
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 5px;
+  }
+
+.name-en{
+  margin-top: 0px;
+}
+
+.text{
+  font-size: 13px;
+}
+
+  header {
+  padding:10px;
+  background: #ccc;
+}
+
+#nav-drawer {
+  position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/*ハンバーガーの形をCSSで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: black;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒箇所*/
+#nav-close {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*メニューの中身*/
+.header-list {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 90%;
+  max-width: 330px;/*最大幅（お好みで調整を）*/
+  height: 100%;
+  background: #fff;
+  transition: .3s ease-in-out;
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
+  display: block;
+}
+
+
+/*チェックがついたら表示させる*/
+#nav-input:checked ~ #nav-close {
+  display: block;
+  opacity: .5;
+}
+
+#nav-input:checked ~ .header-list{
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+.header-logo-menu{
+ display: flex;
+ display: -moz-flex;
+ display: -o-flex;
+ display: -webkit-flex;
+ display: -ms-flex;
+ flex-direction: row;
+ -moz-flex-direction: row;
+ -o-flex-direction: row;
+ -webkit-flex-direction: row;
+ -ms-flex-direction: row;
+}
+
+/*ロゴやサイトタイトルをセンタリング*/
+.logo-area{text-align:center;margin:auto;}
+
+.header-list a{
+  margin-top: 20px;
+}
+.contact{
+  height: 800px;
+}
+
+form{
+  margin: 0px 5vw;
+}
+
+input,
+textarea{
+  margin-left: 10px;
+  width: 50vw;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .header{
+    position: relative;
+  }
+  .top{
+    letter-spacing: 5px;
+    color: rgb(0, 0, 0);
+  }
+
+  .top h1{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    line-height: 40px;
+    font-size: 30px;
+  }
+
+  .name-en{
+    font-size: 10vw;
+  }
+
+  .name-ja{
+    font-size: 5vw;
+  }
+
+  .text{
+    width: 80%;
+    font-size: 3vw;
+  }
+
+  .contact{
+    height: 700px;
+  }
+
+  .contact p{
+    width: 90%;
+    font-size: 18px;
+  }
+  
+
+  input,
+  textarea{
+    width: 50vw;
+  }
+
+  label{
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .name input{
+    margin-left: 10px;
+  }
+
+  .email input{
+    margin-left: 10px;
+  }
+
+  .company input{
+    margin-left: 10px;
+  }
+
+  .about textarea{
+    margin-left: 10px;
+  }
+
+  .name{
+  }
+
+  .name label,
+  .email label,
+  .company label,
+  .about label{
+    font-size: 3vw;
+  }
+
+  .email{
+    justify-content: right;
+  }
+
+  .company{
+  }
+
+  .about{
+  }
+
+  .contact{
+    height: 900px;
+  }
+
+  .contact p{
+    font-size: 5vw;
+    width: 80vw;
+    margin: 40px auto;
+  }
+
 }
 </style>
