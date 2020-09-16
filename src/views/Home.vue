@@ -198,7 +198,7 @@ export default {
 
 .header-list a{
   margin:0 3vw;
-  font-size: 3vw;
+  font-size: 2vw;
   color:black;
   font-weight: bold;
   border: none;
@@ -387,30 +387,30 @@ button{
     letter-spacing: 5px;
   }
 
-.name-en{
+  .name-en{
   margin-top: 0px;
-}
+  }
 
-.text{
+  .text{
   font-size: 13px;
-}
+  }
 
   header {
   padding:10px;
   background: #ccc;
-}
+  }
 
-#nav-drawer {
+  #nav-drawer {
   position: relative;
-}
+  }
 
-/*チェックボックス等は非表示に*/
-.nav-unshown {
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
   display:none;
-}
+  }
 
-/*アイコンのスペース*/
-#nav-open {
+  /*アイコンのスペース*/
+  #nav-open {
   display: inline-block;
   width: 30px;
   height: 22px;
@@ -418,10 +418,12 @@ button{
   position: absolute;
   top: 10px;
   left: 10px;
-}
+  }
 
-/*ハンバーガーの形をCSSで表現*/
-#nav-open span, #nav-open span:before, #nav-open span:after {
+  /*ハンバーガーの形をCSSで表現*/
+  #nav-open span,
+  #nav-open span:before,
+  #nav-open span:after {
   position: absolute;
   height: 3px;/*線の太さ*/
   width: 25px;/*長さ*/
@@ -430,16 +432,18 @@ button{
   display: block;
   content: '';
   cursor: pointer;
-}
-#nav-open span:before {
-  bottom: -8px;
-}
-#nav-open span:after {
-  bottom: -16px;
-}
+  }
 
-/*閉じる用の薄黒箇所*/
-#nav-close {
+ #nav-open span:before {
+  bottom: -8px;
+ }
+
+ #nav-open span:after {
+  bottom: -16px;
+ }
+
+ /*閉じる用の薄黒箇所*/
+ #nav-close {
   display: none;
   position: fixed;
   z-index: 101;
@@ -450,10 +454,10 @@ button{
   background: black;
   opacity: 0;
   transition: .3s ease-in-out;
-}
+  }
 
-/*メニューの中身*/
-.header-list {
+  /*メニューの中身*/
+  .header-list {
   overflow: auto;
   position: fixed;
   top: 0;
@@ -467,57 +471,57 @@ button{
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);
   display: block;
-}
+  }
 
-/*チェックがついたら表示させる*/
-#nav-input:checked ~ #nav-close {
+  /*チェックがついたら表示させる*/
+  #nav-input:checked ~ #nav-close {
   display: block;
   opacity: .5;
-}
+  }
 
-#nav-input:checked ~ .header-list{
+  #nav-input:checked ~ .header-list{
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
   box-shadow: 6px 0 25px rgba(0,0,0,.15);
-}
+  }
 
-.header-logo-menu{
- display: flex;
- display: -moz-flex;
- display: -o-flex;
- display: -webkit-flex;
- display: -ms-flex;
- flex-direction: row;
- -moz-flex-direction: row;
- -o-flex-direction: row;
- -webkit-flex-direction: row;
- -ms-flex-direction: row;
-}
+  .header-logo-menu{
+  display: flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  flex-direction: row;
+  -moz-flex-direction: row;
+  -o-flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+ }
 
-/*ロゴやサイトタイトルをセンタリング*/
-.logo-area{text-align:center;margin:auto;}
+ /*ロゴやサイトタイトルをセンタリング*/
+ .logo-area{text-align:center;margin:auto;}
 
-.header-list a{
+ .header-list a{
   margin-top: 20px;
-}
+ }
 
-.profile-right{
+ .profile-right{
   width: 50%;
-}
-.contact{
+ }
+
+ .contact{
   height: 800px;
-}
+ }
 
-form{
+ form{
   margin: 0px 5vw;
-}
+ }
 
-input,
-textarea{
+ input,
+ textarea{
   margin-left: 10px;
   width: 50vw;
-}
-
+ }
 }
 
 @media screen and (max-width: 480px) {
@@ -538,7 +542,7 @@ textarea{
   }
 
   .name-en{
-    font-size: 10vw;
+    font-size: 8vw;
   }
 
   .name-ja{
@@ -559,11 +563,6 @@ textarea{
     font-size: 18px;
   }
 
-  input,
-  textarea{
-    width: 50vw;
-  }
-
   label{
     font-size: 16px;
     display: flex;
@@ -571,20 +570,12 @@ textarea{
     align-items: center;
   }
 
-  .name input{
-    margin-left: 10px;
-  }
-
-  .email input{
-    margin-left: 10px;
-  }
-
-  .company input{
-    margin-left: 10px;
-  }
-
+  .name input,
+  .email input,
+  .company input,
   .about textarea{
     margin-left: 10px;
+    width: 50vw;
   }
 
   .name label,
@@ -607,6 +598,5 @@ textarea{
     width: 80vw;
     margin: 40px auto;
   }
-
 }
 </style>
